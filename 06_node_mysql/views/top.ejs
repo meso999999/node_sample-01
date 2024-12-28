@@ -1,0 +1,14 @@
+<%- include('head'); %>
+
+<%- include('nav'); %>
+
+    <h1>top.ejsです。</h1>
+
+    <% userTable.forEach((user) => { %>
+    <div style="display:inline-flex">
+      <p><%= user.id %> <%= user.name %>　<form action="/delete/<%= user.id %>" method="post"><input type="submit" value="削除"></form></p>　<a class="abtn" href="/editing/<%= user.id %>">編集</a>
+    </div>
+    <br />
+    <% }) %>
+  </body>
+</html>
